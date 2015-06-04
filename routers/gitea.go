@@ -15,6 +15,7 @@
 package routers
 
 import (
+	"fmt"
 	"io"
 	"os"
 	"path"
@@ -26,38 +27,40 @@ import (
 	"github.com/go-gitea/website/models"
 )
 
-func GogsHome(ctx *macaron.Context) {
+func GiteaHome(ctx *macaron.Context) {
 	ctx.Data["IsPageHome"] = true
 	ctx.HTML(200, "home_gogs", ctx.Data)
 }
 
 func About(ctx *macaron.Context, locale i18n.Locale) {
 	ctx.Data["Link"] = "/about"
-	df := models.GetDoc("gogs", "about", locale.Lang)
+	df := models.GetDoc("gitea", "about", locale.Lang)
 	ctx.Data["Data"] = string(df.Data)
 	ctx.HTML(200, "page", ctx.Data)
 }
 
 func Team(ctx *macaron.Context, locale i18n.Locale) {
 	ctx.Data["Link"] = "/team"
-	df := models.GetDoc("gogs", "team", locale.Lang)
+	df := models.GetDoc("gitea", "team", locale.Lang)
 	ctx.Data["Data"] = string(df.Data)
 	ctx.HTML(200, "page", ctx.Data)
 }
 
 func Donate(ctx *macaron.Context, locale i18n.Locale) {
 	ctx.Data["Link"] = "/donate"
-	df := models.GetDoc("gogs", "donate", locale.Lang)
+	df := models.GetDoc("gitea", "donate", locale.Lang)
 	ctx.Data["Data"] = string(df.Data)
 	ctx.HTML(200, "page", ctx.Data)
 }
 
 func docs(ctx *macaron.Context, locale i18n.Locale, name string) {
+	fmt.Println("1111", name, locale.Lang)
 	docRoot := models.GetDocByLocale(name, locale.Lang)
 	if docRoot == nil {
 		ctx.Error(404)
 		return
 	}
+	fmt.Println("2222")
 
 	link := strings.TrimPrefix(ctx.Params("*"), "/")
 	link = strings.TrimSuffix(link, ".html")
@@ -70,14 +73,17 @@ func docs(ctx *macaron.Context, locale i18n.Locale, name string) {
 		return
 	}
 
+fmt.Println("333")
 	doc, _ = docRoot.GetNodeByLink(link)
 	if doc == nil {
 		doc, _ = docRoot.GetNodeByLink(link + "/")
 	}
+	fmt.Println("444")
 	if doc == nil {
 		ctx.Error(404)
 		return
 	}
+
 
 	ctx.Data["DocRoot"] = docRoot
 	ctx.Data["Doc"] = doc
@@ -86,8 +92,8 @@ func docs(ctx *macaron.Context, locale i18n.Locale, name string) {
 	ctx.HTML(200, "document_"+name, ctx.Data)
 }
 
-func GogsDocs(ctx *macaron.Context, locale i18n.Locale) {
-	docs(ctx, locale, "gogs")
+func GiteaDocs(ctx *macaron.Context, locale i18n.Locale) {
+	docs(ctx, locale, "gitea")
 }
 
 func docsStatic(ctx *macaron.Context, name string) {
@@ -113,6 +119,6 @@ func docsStatic(ctx *macaron.Context, name string) {
 	ctx.Error(404)
 }
 
-func GogsStatic(ctx *macaron.Context) {
-	docsStatic(ctx, "gogs")
+func GiteaStatic(ctx *macaron.Context) {
+	docsStatic(ctx, "gitea")
 }
