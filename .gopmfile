@@ -1,5 +1,5 @@
 [target]
-path = github.com/gogits/gogsweb
+path = github.com/go-gitea/website
 
 [deps]
 github.com/Unknwon/com = 

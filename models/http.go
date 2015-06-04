@@ -20,7 +20,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/gogits/gogsweb/modules/log"
+	"github.com/go-gitea/website/modules/log"
 )
 
 var (

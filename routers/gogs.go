@@ -23,7 +23,7 @@ import (
 	"github.com/Unknwon/macaron"
 	"github.com/macaron-contrib/i18n"
 
-	"github.com/gogits/gogsweb/models"
+	"github.com/go-gitea/website/models"
 )
 
 func GogsHome(ctx *macaron.Context) {
