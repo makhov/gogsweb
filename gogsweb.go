@@ -25,11 +25,11 @@ import (
 	"github.com/macaron-contrib/i18n"
 	"github.com/macaron-contrib/switcher"
 
-	"github.com/go-gitea/website/models"
-	"github.com/go-gitea/website/modules/base"
-	"github.com/go-gitea/website/modules/log"
-	"github.com/go-gitea/website/modules/setting"
-	"github.com/go-gitea/website/routers"
+	"github.com/gogits/gogsweb/models"
+	"github.com/gogits/gogsweb/modules/base"
+	"github.com/gogits/gogsweb/modules/log"
+	"github.com/gogits/gogsweb/modules/setting"
+	"github.com/gogits/gogsweb/routers"
 )
 
 const APP_VER = "0.2.7.0202"
