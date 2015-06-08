@@ -1,5 +1,6 @@
 .DS_Store
 gogsweb
+giteaweb
 *.exe
 *.exe~
 config.codekit
@@ -10,3 +11,5 @@ docs/
 conf/custom.ini
 gogsweb.sublime-project
 gogsweb.sublime-workspace
+giteaweb.sublime-project
+giteaweb.sublime-workspace

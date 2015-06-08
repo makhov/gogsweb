@@ -32,8 +32,8 @@ import (
 	"github.com/robfig/cron"
 	"github.com/russross/blackfriday"
 
-	"github.com/gogits/gogsweb/modules/log"
-	"github.com/gogits/gogsweb/modules/setting"
+	"github.com/go-gitea/website/modules/log"
+	"github.com/go-gitea/website/modules/setting"
 )
 
 var (

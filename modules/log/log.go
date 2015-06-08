@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	PREFIX      = "[Gogs Web]"
+	PREFIX      = "[Gitea Web]"
 	TIME_FORMAT = "06-01-02 15:04:05"
 )
 

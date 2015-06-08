@@ -1,7 +1,7 @@
-Gogs Web
+Gitea Web
 ========
 
-An open source project for official documentation website of [Gogs](http://gogs.io) and [Macaron](http://macaron.gogs.io).
+An open source project for official documentation website of [Gitea](http://gitea.io) and [Macaron](http://macaron.gogs.io).
 
 ## Introduction
 
@@ -16,4 +16,4 @@ TODO
 
 ## License
 
-Gogs Web is under Apache v2 License. See the [LICENSE](LICENSE) file for the full license text.
+Gitea Web is under Apache v2 License. See the [LICENSE](LICENSE) file for the full license text.
